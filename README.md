@@ -1,6 +1,6 @@
 # docker-compose-discourse
 
-![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=devescom&repository=docker-compose-discourse)
+![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=devescom&repository=discourse)
 
 Baseado em um trabalho do @codeformuenster, esse fork tem por objetivo simplificar o processo de
 envio para produção da stack do discourse, que tem complexibilidade alta nas instruções oficiais
