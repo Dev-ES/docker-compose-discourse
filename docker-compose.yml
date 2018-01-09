@@ -1,19 +1,19 @@
 discourse:
-  image: codeformuenster/discourse
+  image: gerencio/discourse
   ports:
     - "3000:3000"
   volumes:
-    - discourse/assets:/usr/src/app/public/assets
-    - discourse/uploads:/usr/src/app/public/uploads
-    - discourse/backups:/usr/src/app/public/backups
+    - ./discourse/assets:/usr/src/app/public/assets
+    - ./discourse/uploads:/usr/src/app/public/uploads
+    - ./discourse/backups:/usr/src/app/public/backups
+    - ./discourse/logs:/home/discourse/discourse/log
   links:
     - postgres
     - redis
   env_file:
     - .env
-
 sidekiq:
-  image: codeformuenster/discourse
+  image: gerencio/discourse
   command: sidekiq -c 3 -v
   links:
     - postgres
@@ -30,7 +30,7 @@ postgres:
   env_file:
     - .env
   volumes:
-    - postgres/data:/var/lib/postgresql/data
+    - ./postgres/data:/var/lib/postgresql/data
 
 redis:
-  image: redis:2.6
+  image: redis:2.8

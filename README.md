@@ -1,14 +1,18 @@
-/!\ This is no longer maintained, if you want to use a setup that is used in production, please head to [indiehosters/discourse](https://github.com/indiehosters/discourse) /!\
-
 # docker-compose-discourse
 
-Proof of concept, there will be errors, please test! :)
+Baseado em um trabalho do @codeformuenster, esse fork tem por objetivo simplificar o processo de
+envio para produção da stack do discourse, que tem complexibilidade alta nas instruções oficiais
+e quebram os princípios da responsabilidade única para cada conteiner do projeto.
 
-    $ sudo docker-compose build
+```bash
 
-    $ sudo docker-compose run discourse bash -c "sleep 3 && rake db:migrate assets:precompile"
+sudo docker-compose build
 
-Provide some configuration via environment variables in `docker-compose.yml`:
+sudo docker-compose run discourse bash -c "sleep 3 && rake db:migrate assets:precompile"
+
+```
+
+Alimente as variáveis de ambiente via environment variables in `docker-compose.yml`:
 
     DISCOURSE_HOSTNAME=
     DISCOURSE_SMTP_ADDRESS=
@@ -17,8 +21,14 @@ Provide some configuration via environment variables in `docker-compose.yml`:
     DISCOURSE_SMTP_PASSWORD=
     DISCOURSE_DEVELOPER_EMAILS=
 
-Start Discourse:
+Inicie Discourse:
 
-    $ sudo docker-compose up
+```bash
 
-    $ xdg-open http://localhost:3000/
+sudo docker-compose up
+
+open http://localhost:3000/
+
+```
+
+O projeto foi levantado para atender ao projeto do amanhã.
