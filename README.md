@@ -1,5 +1,7 @@
 # docker-compose-discourse
 
+![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=devescom&repository=docker-compose-discourse)
+
 Baseado em um trabalho do @codeformuenster, esse fork tem por objetivo simplificar o processo de
 envio para produção da stack do discourse, que tem complexibilidade alta nas instruções oficiais
 e quebram os princípios da responsabilidade única para cada conteiner do projeto.
