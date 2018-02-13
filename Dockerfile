@@ -13,8 +13,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     imagemagick libxml2 advancecomp \
     gifsicle jpegoptim libjpeg-progs \
     optipng pngcrush pngquant jhead \
-    node npm \
   && rm -rf /var/lib/apt/lists/* \
+  && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+  && apt-get install -y --no-install-recommends nodejs \
+  && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
   && npm install -g svgo
 
 ADD puma.rb /usr/src/app/config/puma.rb
